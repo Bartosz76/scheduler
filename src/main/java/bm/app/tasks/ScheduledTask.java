@@ -1,6 +1,7 @@
 package bm.app.tasks;
 
 import bm.app.repositories.Sentences;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -15,6 +16,7 @@ public class ScheduledTask {
         this.sentences = sentences;
     }
 
+    @Scheduled(fixedRate = 5000)
     public void saySomethingNice(){
         System.out.println(quotePuller());
     }
